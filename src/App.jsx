@@ -1,5 +1,8 @@
+import Todo from "./Components/Todo";
+import "./index.css";
+
 const App = () => {
-  return <h1>Hello Redux</h1>;
+  return <Todo />;
 };
 
 export default App;

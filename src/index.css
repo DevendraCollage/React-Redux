@@ -1,68 +1,101 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+/* General container styling */
+.container {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.todo-app {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Header styling */
+.todo-app h1 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.todo-app h1 i {
+  color: #5c67f2;
+  margin-right: 0.5rem;
+}
+
+/* Form styling */
+.row form {
+  display: flex;
+  justify-content: space-between;
+}
+
+#input-box {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+#input-box:focus {
+  border-color: #5c67f2;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  color: #fff;
+  background-color: #5c67f2;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  background-color: #4a55d2;
+}
+
+/* List styling */
+#list-container {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+#list-container li {
+  background: #f4f4f9;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#list-container li .task-text {
+  color: #333;
+  font-size: 16px;
+}
+
+#list-container li button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#list-container li button:hover {
+  color: #c0392b;
 }
