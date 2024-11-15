@@ -99,3 +99,19 @@ button:hover {
 #list-container li button:hover {
   color: #c0392b;
 }
+
+.icon-style {
+  color: #f35959;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-style:hover {
+  color: #e63946;
+  transform: scale(1.2);
+}
+
+.icon-style:active {
+  transform: scale(1);
+  color: #c92a2a;
+}
