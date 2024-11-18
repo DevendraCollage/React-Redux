@@ -1,6 +1,7 @@
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "@redux-devtools/extension";
-import { thunk } from "redux-thunk";
+// import { createStore, applyMiddleware } from "redux";
+// import { composeWithDevTools } from "@redux-devtools/extension";
+// import { thunk } from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
 
 /* eslint-disable no-case-declarations */
 const ADD_TASK = "task/add";
@@ -41,11 +42,18 @@ const taskReducer = (state = initialState, action) => {
   }
 };
 
-// Step:2 Create the Redux store using the reducer
-export const store = createStore(
-  taskReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+//! (Old Style) Step:2 Create the Redux store using the reducer
+// export const store = createStore(
+//   taskReducer,
+//   composeWithDevTools(applyMiddleware(thunk))
+// );
+
+//! (New Style)
+export const store = configureStore({
+  reducer: {
+    taskReducer,
+  },
+});
 
 // Step:3 Log the initial state
 // The getState method is a synchronous function that returns the current state of a Redux application. It includes the entire state of the application, including all the reducers and their respective states.
