@@ -1,7 +1,7 @@
 // import { createStore, applyMiddleware } from "redux";
 // import { composeWithDevTools } from "@redux-devtools/extension";
 // import { thunk } from "redux-thunk";
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 /* eslint-disable no-case-declarations */
 const ADD_TASK = "task/add";
@@ -47,6 +47,19 @@ const taskReducer = (state = initialState, action) => {
 //   taskReducer,
 //   composeWithDevTools(applyMiddleware(thunk))
 // );
+
+//? RTK Slice
+const taskReducer = createSlice({
+  name: "task",
+  initialState,
+  reducers: {
+    addTask(state, action) {},
+    deleteTask(state, action) {},
+  },
+});
+
+// This is also known as Action Creators
+const { addTask, deleteTask } = taskReducer.actions;
 
 //! (New Style)
 export const store = configureStore({
