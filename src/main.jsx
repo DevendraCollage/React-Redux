@@ -8,6 +8,7 @@ import { store } from "./store.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    {/* This using like this we can connect the Redux Toolkit with our react application */}
     <Provider store={store}>
       <App />
     </Provider>
